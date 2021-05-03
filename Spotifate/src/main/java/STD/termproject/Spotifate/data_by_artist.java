@@ -1,4 +1,4 @@
-/*
+
 package STD.termproject.Spotifate;
 
 import javax.persistence.Entity;
@@ -44,4 +44,3 @@ public class data_by_artist {
 	private Integer count;
 
 }
-*/
