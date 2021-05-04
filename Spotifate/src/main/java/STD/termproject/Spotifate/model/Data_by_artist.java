@@ -169,7 +169,7 @@ public class Data_by_artist {
     	this.popularity = popularity;
     }
 
-    public int getKeyVal() {
+    public int getKeyval() {
     	return key_val;
     }
     public void setKeyVal(int key_val) {

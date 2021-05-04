@@ -24,6 +24,7 @@ public class MyController {
         model.addAttribute("data", data);
 
         return "showArtists";
+
     }
 
     @Autowired
@@ -36,5 +37,6 @@ public class MyController {
         model.addAttribute("data", data);
 
         return "showGenres";
+
     }
 }
