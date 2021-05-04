@@ -1,7 +1,7 @@
-package com.zetcode.controller;
+package STD.termproject.Spotifate.controller;
 
-import com.zetcode.model.City;
-import com.zetcode.service.ICityService;
+import STD.termproject.Spotifate.model.Data_by_artist;
+import STD.termproject.Spotifate.service.IData_by_artistService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MyController {
 
     @Autowired
-    private ICityService cityService;
+    private IData_by_artistService Data_by_artistService;
 
-    @GetMapping("/cities")
-    public String findCities(Model model) {
+    @GetMapping("/data")
+    public String findData(Model model) {
 
-        var cities = (List<City>) cityService.findAll();
+        var data = (List<Data_by_artist>) Data_by_artistService.findAll();
 
-        model.addAttribute("cities", cities);
+        model.addAttribute("data", data);
 
-        return "showCities";
+        return "showData";
     }
 }
