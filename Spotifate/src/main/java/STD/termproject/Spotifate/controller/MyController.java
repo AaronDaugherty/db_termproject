@@ -14,13 +14,13 @@ public class MyController {
     @Autowired
     private IData_by_artistService Data_by_artistService;
 
-    @GetMapping("/data")
-    public String findData(Model model) {
+    @GetMapping("/artists")
+    public String findArtists(Model model) {
 
         var data = (List<Data_by_artist>) Data_by_artistService.findAll();
 
         model.addAttribute("data", data);
 
-        return "showData";
+        return "showArtists";
     }
 }
