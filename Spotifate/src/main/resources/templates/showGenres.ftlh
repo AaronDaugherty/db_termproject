@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <title>
-         Data By Artists
+         Data By Genres
     </title>
   </head>
 
@@ -27,10 +27,10 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="artists">Artists</a>
+                    <a class="nav-link" href="artists">Artists</a>
                 </li>
             <li class="nav-item">
-              <a class="nav-link" href="genres">Genres</a>
+              <a class="nav-link active" href="genres">Genres</a>
             </li>
                 <li class="nav-item">
                     <a class="nav-link" href="tracks">Tracks</a>
@@ -45,13 +45,12 @@
     <br/>
 
     <div class="container">
-        <h1>Data Sorted By Artists</h1>
+        <h1>Data Sorted By Genres</h1>
         </br>
 
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Artist</th>
                     <th scope="col">Genres</th>
                     <th scope="col">Acousticness</th>
                     <th scope="col">Danceability</th>
@@ -66,105 +65,92 @@
                     <th scope="col">Popularity</th>
                     <th scope="col">Key</th>
                     <th scope="col">Mode</th>
-                    <th scope="col">Count</th>
                 </tr>
             </thead>
 
             <tbody>            
-                <#list data as data_by_artist>
+                <#list data as data_by_genre>
                     <tr>
-                        <#if data_by_artist.artists?has_content>
-                            <td>${data_by_artist.artists}</td>
+                        <#if data_by_genre.genres?has_content>
+                            <td>${data_by_genre.genres}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.genres?has_content>
-                            <td>${data_by_artist.genres}</td>
+                        <#if data_by_genre.acousticness?has_content>
+                            <td>${data_by_genre.acousticness}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.acousticness?has_content>
-                            <td>${data_by_artist.acousticness}</td>
+                        <#if data_by_genre.danceability?has_content>
+                            <td>${data_by_genre.danceability}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.danceability?has_content>
-                            <td>${data_by_artist.danceability}</td>
+                        <#if data_by_genre.duration?has_content>
+                            <td>${data_by_genre.duration}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.duration?has_content>
-                            <td>${data_by_artist.duration}</td>
+                        <#if data_by_genre.energy?has_content>
+                            <td>${data_by_genre.energy}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.energy?has_content>
-                            <td>${data_by_artist.energy}</td>
+                        <#if data_by_genre.instrumentalness?has_content>
+                            <td>${data_by_genre.instrumentalness}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.instrumentalness?has_content>
-                            <td>${data_by_artist.instrumentalness}</td>
+                        <#if data_by_genre.liveness?has_content>
+                            <td>${data_by_genre.liveness}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.liveness?has_content>
-                            <td>${data_by_artist.liveness}</td>
+                        <#if data_by_genre.loudness?has_content>
+                            <td>${data_by_genre.loudness}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.loudness?has_content>
-                            <td>${data_by_artist.loudness}</td>
+                        <#if data_by_genre.speechiness?has_content>
+                            <td>${data_by_genre.speechiness}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.speechiness?has_content>
-                            <td>${data_by_artist.speechiness}</td>
+                        <#if data_by_genre.tempo?has_content>
+                            <td>${data_by_genre.tempo}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.tempo?has_content>
-                            <td>${data_by_artist.tempo}</td>
+                        <#if data_by_genre.valence?has_content>
+                            <td>${data_by_genre.valence}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.valence?has_content>
-                            <td>${data_by_artist.valence}</td>
+                        <#if data_by_genre.popularity?has_content>
+                            <td>${data_by_genre.popularity}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.popularity?has_content>
-                            <td>${data_by_artist.popularity}</td>
+                        <#if data_by_genre.keyval?has_content>
+                            <td>${data_by_genre.keyval}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>
 
-                        <#if data_by_artist.keyval?has_content>
-                            <td>${data_by_artist.keyval}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.mode?has_content>
-                            <td>${data_by_artist.mode}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.count?has_content>
-                            <td>${data_by_artist.count}</td>
+                        <#if data_by_genre.mode?has_content>
+                            <td>${data_by_genre.mode}</td>
                         <#else>
                             <td>NULL</td>
                         </#if>

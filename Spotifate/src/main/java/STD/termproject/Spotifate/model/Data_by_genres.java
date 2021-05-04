@@ -11,13 +11,12 @@ import javax.persistence.Table;
 +------------------+--------------+------+-----+---------+-------+
 | Field            | Type         | Null | Key | Default | Extra |
 +------------------+--------------+------+-----+---------+-------+
-| artists          | varchar(255) | NO   | PRI | NULL    |       |
+| genres           | varchar(255) | YES  | PRI | NULL    |       |
 | acousticness     | varchar(255) | YES  |     | NULL    |       |
 | count            | int          | NO   |     | NULL    |       |
 | danceability     | varchar(255) | YES  |     | NULL    |       |
 | duration_ms      | varchar(255) | YES  |     | NULL    |       |
 | energy           | varchar(255) | YES  |     | NULL    |       |
-| genres           | varchar(255) | YES  |     | NULL    |       |
 | instrumentalness | varchar(255) | YES  |     | NULL    |       |
 | key_val          | int          | NO   |     | NULL    |       |
 | liveness         | varchar(255) | YES  |     | NULL    |       |
@@ -160,10 +159,10 @@ public class Data_by_genres {
     	this.popularity = popularity;
     }
 
-    public int getKeyVal() {
+    public int getKeyval() {
     	return key_val;
     }
-    public void setKeyVal(int key_val) {
+    public void setKeyval(int key_val) {
     	this.key_val = key_val;
     }
 
