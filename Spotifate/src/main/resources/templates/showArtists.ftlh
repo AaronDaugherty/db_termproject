@@ -55,130 +55,132 @@
 
         </br>
 
-        <table class="table table-striped table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">Artist</th>
-                    <th scope="col">Genres</th>
-                    <th scope="col">Acousticness</th>
-                    <th scope="col">Danceability</th>
-                    <th scope="col">Duration/ms</th>
-                    <th scope="col">Energy</th>
-                    <th scope="col">Instrumentalness</th>
-                    <th scope="col">Liveness</th>
-                    <th scope="col">Loudness</th>
-                    <th scope="col">Speechiness</th>
-                    <th scope="col">Tempo</th>
-                    <th scope="col">Valence</th>
-                    <th scope="col">Popularity</th>
-                    <th scope="col">Key</th>
-                    <th scope="col">Mode</th>
-                    <th scope="col">Count</th>
-                </tr>
-            </thead>
-
-            <tbody>            
-                <#list data as data_by_artist>
+        <div style="overflow: scroll;max-height: 500px">
+            <table class="table table-striped table-hover">
+                <thead style="position: sticky;top: 0" class="table-dark">
                     <tr>
-                        <#if data_by_artist.artists?has_content>
-                            <td>${data_by_artist.artists}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.genres?has_content>
-                            <td>${data_by_artist.genres}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.acousticness?has_content>
-                            <td>${data_by_artist.acousticness}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.danceability?has_content>
-                            <td>${data_by_artist.danceability}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.duration?has_content>
-                            <td>${data_by_artist.duration}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.energy?has_content>
-                            <td>${data_by_artist.energy}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.instrumentalness?has_content>
-                            <td>${data_by_artist.instrumentalness}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.liveness?has_content>
-                            <td>${data_by_artist.liveness}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.loudness?has_content>
-                            <td>${data_by_artist.loudness}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.speechiness?has_content>
-                            <td>${data_by_artist.speechiness}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.tempo?has_content>
-                            <td>${data_by_artist.tempo}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.valence?has_content>
-                            <td>${data_by_artist.valence}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.popularity?has_content>
-                            <td>${data_by_artist.popularity}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.keyval?has_content>
-                            <td>${data_by_artist.keyval}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.mode?has_content>
-                            <td>${data_by_artist.mode}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
-
-                        <#if data_by_artist.count?has_content>
-                            <td>${data_by_artist.count}</td>
-                        <#else>
-                            <td>NULL</td>
-                        </#if>
+                        <th scope="col">Artist</th>
+                        <th scope="col">Genres</th>
+                        <th scope="col">Acousticness</th>
+                        <th scope="col">Danceability</th>
+                        <th scope="col">Duration/ms</th>
+                        <th scope="col">Energy</th>
+                        <th scope="col">Instrumentalness</th>
+                        <th scope="col">Liveness</th>
+                        <th scope="col">Loudness</th>
+                        <th scope="col">Speechiness</th>
+                        <th scope="col">Tempo</th>
+                        <th scope="col">Valence</th>
+                        <th scope="col">Popularity</th>
+                        <th scope="col">Key</th>
+                        <th scope="col">Mode</th>
+                        <th scope="col">Count</th>
                     </tr>
-                </#list>
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>            
+                    <#list data as data_by_artist>
+                        <tr>
+                            <#if data_by_artist.artists?has_content>
+                                <td>${data_by_artist.artists}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.genres?has_content>
+                                <td>${data_by_artist.genres}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.acousticness?has_content>
+                                <td>${data_by_artist.acousticness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.danceability?has_content>
+                                <td>${data_by_artist.danceability}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.duration?has_content>
+                                <td>${data_by_artist.duration}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.energy?has_content>
+                                <td>${data_by_artist.energy}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.instrumentalness?has_content>
+                                <td>${data_by_artist.instrumentalness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.liveness?has_content>
+                                <td>${data_by_artist.liveness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.loudness?has_content>
+                                <td>${data_by_artist.loudness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.speechiness?has_content>
+                                <td>${data_by_artist.speechiness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.tempo?has_content>
+                                <td>${data_by_artist.tempo}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.valence?has_content>
+                                <td>${data_by_artist.valence}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.popularity?has_content>
+                                <td>${data_by_artist.popularity}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.keyval?has_content>
+                                <td>${data_by_artist.keyval}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.mode?has_content>
+                                <td>${data_by_artist.mode}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+
+                            <#if data_by_artist.count?has_content>
+                                <td>${data_by_artist.count}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                        </tr>
+                    </#list>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

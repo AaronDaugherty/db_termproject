@@ -51,64 +51,68 @@
     <div class="container">
         <h1>Data Sorted By Genres</h1>
 
-        <div class="input-group mb-3 w-80">
-            <label class="input-group-text" for="columnSelect">SELECT</label>
-            <select class="form-select w-20" id="columnSelect">
-                <option value="*">*</option>
-                <option value="genres">Genres</option>
-                <option value="acousticness">Acousticness</option>
-                <option value="danceability">Danceability</option>
-                <option value="duration">Duration/ms</option>
-                <option value="energy">Energy</option>
-                <option value="instrumentalness">Instrumentalness</option>
-                <option value="liveness">Liveness</option>
-                <option value="loudness">Loudness</option>
-                <option value="speechiness">Speechiness</option>
-                <option value="tempo">Tempo</option>
-                <option value="valence">Valence</option>
-                <option value="popularity">Popularity</option>
-                <option value="keyval">Key</option>
-                <option value="mode">Mode</option>
-            </select>
-            <label class="input-group-text" for="tableSelect">FROM</label>
-            <select class="form-select w-20" id="tableSelect">
-                <option value="artists">Artists</option>
-                <option value="artists">Genres</option>
-                <option value="artists">Years</option>
-                <option value="artists">Tracks</option>
-            </select>
-            <label class="input-group-text" for="columnSelect">WHERE</label>
-            <select class="form-select w-20" id="columnSelect">
-                <option value="genres">Genres</option>
-                <option value="acousticness">Acousticness</option>
-                <option value="danceability">Danceability</option>
-                <option value="duration">Duration/ms</option>
-                <option value="energy">Energy</option>
-                <option value="instrumentalness">Instrumentalness</option>
-                <option value="liveness">Liveness</option>
-                <option value="loudness">Loudness</option>
-                <option value="speechiness">Speechiness</option>
-                <option value="tempo">Tempo</option>
-                <option value="valence">Valence</option>
-                <option value="popularity">Popularity</option>
-                <option value="keyval">Key</option>
-                <option value="mode">Mode</option>
-            </select>
-            <select class="form-select w-5" id="operatorSelect">
-                <option value="equals">=</option>
-                <option value="lessThan"><</option>
-                <option value="grThan">></option>
-            </select>
+        <form action="query" method="post">
+            <div class="input-group mb-3 w-80">
+                <label class="input-group-text" for="columnSelect">SELECT</label>
+                <select class="form-select w-20" id="columnSelect" name="select">
+                    <option value="*">*</option>
+                    <option value="genres">Genres</option>
+                    <option value="acousticness">Acousticness</option>
+                    <option value="danceability">Danceability</option>
+                    <option value="duration">Duration/ms</option>
+                    <option value="energy">Energy</option>
+                    <option value="instrumentalness">Instrumentalness</option>
+                    <option value="liveness">Liveness</option>
+                    <option value="loudness">Loudness</option>
+                    <option value="speechiness">Speechiness</option>
+                    <option value="tempo">Tempo</option>
+                    <option value="valence">Valence</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="keyval">Key</option>
+                    <option value="mode">Mode</option>
+                </select>
 
-            <input type="text" class="form-control w-25" placeholder="Indie Rock" aria-label="Text input with dropdown button">
-            <button class="btn btn-outline-primary" type="submit" id="searchButton">Search</button>
-        </div>
+                <label class="input-group-text" for="tableSelect">FROM</label>
+                <input readonly placeholder="Genre Table" class="input-group-text" for="columnSelect" name="data_by_genre"></input>
+
+                <label class="input-group-text" for="columnSelect">WHERE</label>
+                <select class="form-select w-20" id="columnSelect" name="where">
+                    <option value="genres">Genres</option>
+                    <option value="acousticness">Acousticness</option>
+                    <option value="danceability">Danceability</option>
+                    <option value="duration">Duration/ms</option>
+                    <option value="energy">Energy</option>
+                    <option value="instrumentalness">Instrumentalness</option>
+                    <option value="liveness">Liveness</option>
+                    <option value="loudness">Loudness</option>
+                    <option value="speechiness">Speechiness</option>
+                    <option value="tempo">Tempo</option>
+                    <option value="valence">Valence</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="keyval">Key</option>
+                    <option value="mode">Mode</option>
+                </select>
+
+                <select class="form-select w-5" id="operatorSelect" name="operator">
+                    <option value="=">=</option>
+                    <option value="<"><</option>
+                    <option value=">">></option>
+                    <option value="<="><=</option>
+                    <option value=">=">>=</option>
+                </select>
+
+                <input type="text" class="form-control w-25" placeholder="Indie Rock" aria-label="Text input with dropdown button" name="search">
+                <button class="btn btn-outline-primary" type="submit" id="searchButton">Search</button>
+            </div>
+        </form>
 
         </br>
 
+
+
         <div style="overflow: scroll;max-height: 500px">
             <table class="table table-striped table-hover">
-                <thead class="table-dark">
+                <thead style="position: sticky;top: 0" class="table-dark">
                     <tr>
                         <th scope="col">Genres</th>
                         <th scope="col">Acousticness</th>
