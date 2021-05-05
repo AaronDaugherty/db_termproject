@@ -42,6 +42,70 @@ public interface Data_by_genresRepository extends CrudRepository<Data_by_genres,
     List<Data_by_genres> valence_like(String search);
 
 
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.genres LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> genres_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.acousticness LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> acoustic_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.count LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> count_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.danceability LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> dance_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.duration_ms LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> duration_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.energy LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> energy_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.instrumentalness LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> instrumental_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.key_val LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> key_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.liveness LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> liveness_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.loudness LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> loudness_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.mode LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> mode_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.popularity LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> popularity_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.speechiness LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> speechiness_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.tempo LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> tempo_starts_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.valence LIKE ?1%", nativeQuery=true)
+    List<Data_by_genres> valence_starts_with(String search);
+
+
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.genres LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> genres_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.acousticness LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> acoustic_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.count LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> count_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.danceability LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> dance_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.duration_ms LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> duration_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.energy LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> energy_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.instrumentalness LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> instrumental_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.key_val LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> key_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.liveness LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> liveness_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.loudness LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> loudness_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.mode LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> mode_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.popularity LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> popularity_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.speechiness LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> speechiness_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.tempo LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> tempo_ends_with(String search);
+    @Query(value="SELECT * FROM data_by_genre u WHERE u.valence LIKE %?1", nativeQuery=true)
+    List<Data_by_genres> valence_ends_with(String search);
+      
+
     @Query(value="SELECT * FROM data_by_genre u WHERE u.genres = ?1", nativeQuery=true)
     List<Data_by_genres> genres_equal(String search);
     @Query(value="SELECT * FROM data_by_genre u WHERE u.acousticness = ?1", nativeQuery=true)

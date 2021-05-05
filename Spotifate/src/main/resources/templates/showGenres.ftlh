@@ -47,25 +47,19 @@
     <br/>
     <br/>
     <br/>
-
-    <script>
-        function multipleFunc() {
-            document.getElementById("mySelect").multiple = true;
-        }
-    </script>
-
     <div class="container">
-        <h1>Data Sorted By Genres</h1>
+        <h1>Genres Table | ${data?size} Values</h1>
+        <br/>
 
+        <p class="fs-6 fst-italic text-muted">Hold ctrl and click to select multiple columns</p>
         <form action="/genres-query" method="post">
-            <div class="input-group mb-3 w-80">
+            <div class="input-group mb-3" style="max-width:30%">
                 <label class="input-group-text" for="columnSelect">SELECT</label>
-                <select class="form-select w-20" id="mySelect" name="select">
-                    <option value="*">*</option>
+                <select class="form-select w-20" id="columnSelect" name="columns" multiple="mutiple">
                     <option value="genres">Genres</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
-                    <option value="duration">Duration/ms</option>
+                    <option value="duration_ms">Duration/ms</option>
                     <option value="energy">Energy</option>
                     <option value="instrumentalness">Instrumentalness</option>
                     <option value="liveness">Liveness</option>
@@ -74,13 +68,14 @@
                     <option value="tempo">Tempo</option>
                     <option value="valence">Valence</option>
                     <option value="popularity">Popularity</option>
-                    <option value="keyval">Key</option>
+                    <option value="key_val">Key</option>
                     <option value="mode">Mode</option>
                 </select>
+            </div>
 
+            <div class="input-group mb-3 w-80">
                 <label class="input-group-text" for="tableSelect">FROM</label>
                 <input readonly placeholder="Genre Table" class="input-group-text" for="columnSelect" name="from" value="data_by_genre"></input>
-
                 <label class="input-group-text" for="columnSelect">WHERE</label>
                 <select class="form-select w-20" id="columnSelect" name="where">
                     <option value="genres">Genres</option>
@@ -100,17 +95,19 @@
                 </select>
 
                 <select class="form-select w-5" id="operatorSelect" name="operator">
+                    <option value="LIKE">LIKE</option>
+                    <option value="STARTS WITH">STARTS WITH</option>
+                    <option value="ENDS WITH">ENDS WITH</option>
                     <option value="=">=</option>
                     <option value="<>">!=</option>
                     <option value="<"><</option>
                     <option value=">">></option>
                     <option value="<="><=</option>
                     <option value=">=">>=</option>
-                    <option value="LIKE">LIKE</option>
                 </select>
 
                 <input type="text" class="form-control w-25" placeholder="Indie Rock" aria-label="Text input with dropdown button" name="search">
-                <button onclick="multipleFunc()" class="btn btn-outline-primary" type="submit" id="searchButton">Search</button>
+                <button class="btn btn-outline-primary" type="submit" id="searchButton">Search</button>
             </div>
         </form>
 
@@ -118,7 +115,7 @@
 
 
 
-        <div style="overflow: scroll;max-height: 500px">
+        <div style="overflow: scroll;max-height: 650px">
             <table class="table table-striped table-hover">
                 <thead style="position: sticky;top: 0" class="table-dark">
                     <tr>
@@ -231,6 +228,8 @@
             </table>
         </div>
     </div>
+
+    <br/>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 

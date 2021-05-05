@@ -17,6 +17,9 @@ public class Data_by_genresService implements IData_by_genresService {
         return (List<Data_by_genres>) repository.findAll();
     }
 
+
+
+
     @Override
     public List<Data_by_genres> genres_like(String search) {
         var data = (List<Data_by_genres>) repository.genres_like(search);
@@ -92,6 +95,165 @@ public class Data_by_genresService implements IData_by_genresService {
         var data = (List<Data_by_genres>) repository.valence_like(search);
         return data;
     }
+
+
+
+
+    @Override
+    public List<Data_by_genres> genres_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.genres_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> acoustic_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.acoustic_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> count_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.count_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> dance_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.dance_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> duration_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.duration_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> energy_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.energy_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> instrumental_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.instrumental_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> key_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.key_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> liveness_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.liveness_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> loudness_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.loudness_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> mode_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.mode_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> popularity_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.popularity_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> speechiness_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.speechiness_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> tempo_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.tempo_starts_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> valence_starts_with(String search) {
+        var data = (List<Data_by_genres>) repository.valence_starts_with(search);
+        return data;
+    }
+
+
+
+
+    @Override
+    public List<Data_by_genres> genres_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.genres_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> acoustic_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.acoustic_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> count_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.count_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> dance_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.dance_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> duration_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.duration_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> energy_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.energy_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> instrumental_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.instrumental_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> key_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.key_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> liveness_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.liveness_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> loudness_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.loudness_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> mode_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.mode_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> popularity_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.popularity_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> speechiness_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.speechiness_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> tempo_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.tempo_ends_with(search);
+        return data;
+    }
+    @Override
+    public List<Data_by_genres> valence_ends_with(String search) {
+        var data = (List<Data_by_genres>) repository.valence_ends_with(search);
+        return data;
+    }
+
 
 
 
