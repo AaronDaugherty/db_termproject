@@ -13,6 +13,7 @@
     </title>
   </head>
 
+
   <body>
     <div>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark vw-100">
@@ -27,16 +28,16 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/artists">Artists</a>
+                            <a class="nav-link" href="artists">Artists</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/genres">Genres</a>
+                            <a class="nav-link" href="genres">Genres</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tracks">Tracks</a>
+                            <a class="nav-link" href="tracks">Tracks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/year">Year</a>
+                            <a class="nav-link" href="year">Year</a>
                         </li>
                     </ul>
                 </div>
@@ -48,75 +49,9 @@
     <br/>
     <br/>
 
-    <script>
-        function multipleFunc() {
-            document.getElementById("mySelect").multiple = true;
-        }
-    </script>
-
     <div class="container">
-        <h1>Data Sorted By Genres</h1>
 
-        <form action="/genres-query" method="post">
-            <div class="input-group mb-3 w-80">
-                <label class="input-group-text" for="columnSelect">SELECT</label>
-                <select class="form-select w-20" id="mySelect" name="select">
-                    <option value="*">*</option>
-                    <option value="genres">Genres</option>
-                    <option value="acousticness">Acousticness</option>
-                    <option value="danceability">Danceability</option>
-                    <option value="duration">Duration/ms</option>
-                    <option value="energy">Energy</option>
-                    <option value="instrumentalness">Instrumentalness</option>
-                    <option value="liveness">Liveness</option>
-                    <option value="loudness">Loudness</option>
-                    <option value="speechiness">Speechiness</option>
-                    <option value="tempo">Tempo</option>
-                    <option value="valence">Valence</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="keyval">Key</option>
-                    <option value="mode">Mode</option>
-                </select>
-
-                <label class="input-group-text" for="tableSelect">FROM</label>
-                <input readonly placeholder="Genre Table" class="input-group-text" for="columnSelect" name="from" value="data_by_genre"></input>
-
-                <label class="input-group-text" for="columnSelect">WHERE</label>
-                <select class="form-select w-20" id="columnSelect" name="where">
-                    <option value="genres">Genres</option>
-                    <option value="acousticness">Acousticness</option>
-                    <option value="danceability">Danceability</option>
-                    <option value="duration">Duration/ms</option>
-                    <option value="energy">Energy</option>
-                    <option value="instrumentalness">Instrumentalness</option>
-                    <option value="liveness">Liveness</option>
-                    <option value="loudness">Loudness</option>
-                    <option value="speechiness">Speechiness</option>
-                    <option value="tempo">Tempo</option>
-                    <option value="valence">Valence</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="keyval">Key</option>
-                    <option value="mode">Mode</option>
-                </select>
-
-                <select class="form-select w-5" id="operatorSelect" name="operator">
-                    <option value="=">=</option>
-                    <option value="<>">!=</option>
-                    <option value="<"><</option>
-                    <option value=">">></option>
-                    <option value="<="><=</option>
-                    <option value=">=">>=</option>
-                    <option value="LIKE">LIKE</option>
-                </select>
-
-                <input type="text" class="form-control w-25" placeholder="Indie Rock" aria-label="Text input with dropdown button" name="search">
-                <button onclick="multipleFunc()" class="btn btn-outline-primary" type="submit" id="searchButton">Search</button>
-            </div>
-        </form>
-
-        </br>
-
-
+        <h1>Queried Genres Table</h1>
 
         <div style="overflow: scroll;max-height: 500px">
             <table class="table table-striped table-hover">
@@ -231,6 +166,8 @@
             </table>
         </div>
     </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
