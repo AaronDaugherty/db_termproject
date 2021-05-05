@@ -73,7 +73,7 @@
                 </select>
 
                 <label class="input-group-text" for="tableSelect">FROM</label>
-                <input readonly placeholder="Genre Table" class="input-group-text" for="columnSelect" name="data_by_genre"></input>
+                <input readonly placeholder="Genre Table" class="form-control w-5" for="columnSelect" name="data_by_genre"></input>
 
                 <label class="input-group-text" for="columnSelect">WHERE</label>
                 <select class="form-select w-20" id="columnSelect" name="where">
@@ -93,7 +93,7 @@
                     <option value="mode">Mode</option>
                 </select>
 
-                <select class="form-select w-5" id="operatorSelect" name="operator">
+                <select class="form-select-padding-x:5 form-select-color: white" id="operatorSelect" name="operator">
                     <option value="=">=</option>
                     <option value="<"><</option>
                     <option value=">">></option>
