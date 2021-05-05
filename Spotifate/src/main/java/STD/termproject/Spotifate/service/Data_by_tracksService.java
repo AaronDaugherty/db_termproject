@@ -1,3 +1,4 @@
+/*
 package STD.termproject.Spotifate.service;
 
 import STD.termproject.Spotifate.model.Data_by_tracks;
@@ -18,3 +19,4 @@ public class Data_by_tracksService implements IData_by_tracksService {
         return (List<Data_by_tracks>) repository.findAll();
     }
 }
+*/

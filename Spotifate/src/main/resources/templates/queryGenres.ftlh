@@ -37,7 +37,7 @@
                             <a class="nav-link" href="tracks">Tracks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="year">Year</a>
+                            <a class="nav-link" href="years">Years</a>
                         </li>
                     </ul>
                 </div>

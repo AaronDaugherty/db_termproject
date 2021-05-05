@@ -6,6 +6,8 @@ import STD.termproject.Spotifate.model.Data_by_genres;
 import STD.termproject.Spotifate.service.IData_by_genresService;
 import STD.termproject.Spotifate.model.Data_by_years;
 import STD.termproject.Spotifate.service.IData_by_yearsService;
+//import STD.termproject.Spotifate.model.Data_by_tracks;
+//import STD.termproject.Spotifate.service.IData_by_tracksService;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -202,16 +204,6 @@ public class MyController {
 
 
         else if (operator.equals("=")) {
-            try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
-            }
-            catch (NumberFormatException ex) {
-            }
-            
             if (where.equals("genres")) {
                 var data = (List<Data_by_artist>) Data_by_artistService.genres_equal(search);
                 model.addAttribute("data", data);
@@ -264,16 +256,6 @@ public class MyController {
         }
 
         else if (operator.equals("<>")) {
-            try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
-            }
-            catch (NumberFormatException ex) {
-            }
-
             if (where.equals("genres")) {
                 var data = (List<Data_by_artist>) Data_by_artistService.genres_notequal(search);
                 model.addAttribute("data", data);
@@ -326,255 +308,244 @@ public class MyController {
         }
 
         else if (operator.equals("<")) {
+            Float fSearch;
+
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.genres_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.genres_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("artists")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.artists_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.artists_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.count_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.count_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.dance_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.dance_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.duration_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.duration_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.energy_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.energy_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.key_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.key_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.liveness_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.liveness_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.loudness_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.loudness_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.mode_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.mode_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.popularity_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.popularity_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.tempo_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.tempo_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.valence_lessthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.valence_lessthan(fSearch);
                 model.addAttribute("data", data);
             }
         } 
 
 
         else if (operator.equals("<=")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.genres_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.genres_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("artists")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.artists_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.artists_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.count_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.count_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.dance_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.dance_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.duration_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.duration_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.energy_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.energy_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.key_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.key_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.liveness_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.liveness_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.loudness_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.loudness_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.mode_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.mode_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.popularity_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.popularity_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.tempo_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.tempo_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.valence_lessthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.valence_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             }
         }
 
 
         else if (operator.equals(">")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.genres_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.genres_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("artists")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.artists_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.artists_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.count_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.count_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.dance_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.dance_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.duration_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.duration_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.energy_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.energy_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.key_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.key_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.liveness_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.liveness_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.loudness_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.loudness_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.mode_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.mode_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.popularity_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.popularity_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.tempo_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.tempo_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.valence_greaterthan(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.valence_greaterthan(fSearch);
                 model.addAttribute("data", data);
             }
         }
 
         else if (operator.equals(">=")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.genres_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.genres_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("artists")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.artists_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.artists_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.acoustic_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.count_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.count_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.dance_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.dance_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.duration_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.duration_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.energy_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.energy_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.instrumental_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.key_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.key_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.liveness_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.liveness_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.loudness_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.loudness_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.mode_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.mode_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.popularity_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.popularity_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.speechiness_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.tempo_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.tempo_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_artist>) Data_by_artistService.valence_greaterthan_or_equal(search);
+                var data = (List<Data_by_artist>) Data_by_artistService.valence_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             }
         }
@@ -584,6 +555,17 @@ public class MyController {
         return "queryArtists";
     }
     
+
+
+
+
+
+
+
+
+
+
+
     @Autowired
     private IData_by_yearsService Data_by_yearsService;
       @GetMapping("/years")
@@ -594,8 +576,507 @@ public class MyController {
         model.addAttribute("data", data);
 
         return "showYears";
-
     }
+
+
+    @PostMapping("/years-query")
+    public String queryYears(Model model, @RequestParam String search, @RequestParam String operator, @RequestParam String where, @RequestParam List<String> columns) {
+
+        if (columns.isEmpty()) {
+            return "ERROR: Please select at least one column";
+        }
+
+        if (operator.equals("LIKE")) {
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_like(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_like(search);
+                model.addAttribute("data", data);
+            }
+        }
+
+
+        else if (operator.equals("STARTS WITH")) {
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_starts_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_starts_with(search);
+                model.addAttribute("data", data);
+            }
+        }
+
+
+        else if (operator.equals("ENDS WITH")) {
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_ends_with(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_ends_with(search);
+                model.addAttribute("data", data);
+            }
+        }
+
+
+        else if (operator.equals("=")) {
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_equal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_equal(search);
+                model.addAttribute("data", data);
+            }
+        }
+
+        else if (operator.equals("<>")) {
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_notequal(search);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_notequal(search);
+                model.addAttribute("data", data);
+            }
+        }
+
+        else if (operator.equals("<")) {
+            Float fSearch;
+            try{
+                fSearch = Float.parseFloat(search);
+            }
+            catch (NumberFormatException ex) {
+                return "ERROR: Please use integer values for [<, >, <=, >=]";
+            }
+
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_lessthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_lessthan(fSearch);
+                model.addAttribute("data", data);
+            }
+        } 
+
+
+        else if (operator.equals("<=")) {
+            Float fSearch;
+            try{
+                fSearch = Float.parseFloat(search);
+            }
+            catch (NumberFormatException ex) {
+                return "ERROR: Please use integer values for [<, >, <=, >=]";
+            }
+
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_lessthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            }
+        }
+
+
+        else if (operator.equals(">")) {
+            Float fSearch;
+            try{
+                fSearch = Float.parseFloat(search);
+            }
+            catch (NumberFormatException ex) {
+                return "ERROR: Please use integer values for [<, >, <=, >=]";
+            }
+
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_greaterthan(fSearch);
+                model.addAttribute("data", data);
+            }
+        }
+
+        else if (operator.equals(">=")) {
+            Float fSearch;
+            try{
+                fSearch = Float.parseFloat(search);
+            }
+            catch (NumberFormatException ex) {
+                return "ERROR: Please use integer values for [<, >, <=, >=]";
+            }
+
+            if (where.equals("years")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.years_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("acousticness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.acoustic_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("count")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.count_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("danceability")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.dance_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("duration")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.duration_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("energy")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.energy_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("instrumentalness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.instrumental_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("keyval")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.key_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("liveness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.liveness_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("loudness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.loudness_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("mode")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.mode_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("popularity")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.popularity_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("speechiness")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.speechiness_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("tempo")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.tempo_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            } else if (where.equals("valence")) {
+                var data = (List<Data_by_years>) Data_by_yearsService.valence_greaterthan_or_equal(fSearch);
+                model.addAttribute("data", data);
+            }
+        }
+
+        model.addAttribute("columns", columns);
+
+        return "queryYears";
+    }
+
+
+
+
+
+
+
+
+
 
 
     @Autowired
@@ -769,16 +1250,6 @@ public class MyController {
 
 
         else if (operator.equals("=")) {
-            try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
-            }
-            catch (NumberFormatException ex) {
-            }
-            
             if (where.equals("genres")) {
                 var data = (List<Data_by_genres>) Data_by_genresService.genres_equal(search);
                 model.addAttribute("data", data);
@@ -828,16 +1299,6 @@ public class MyController {
         }
 
         else if (operator.equals("<>")) {
-            try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
-            }
-            catch (NumberFormatException ex) {
-            }
-
             if (where.equals("genres")) {
                 var data = (List<Data_by_genres>) Data_by_genresService.genres_notequal(search);
                 model.addAttribute("data", data);
@@ -887,243 +1348,231 @@ public class MyController {
         }
 
         else if (operator.equals("<")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.genres_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.genres_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.count_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.count_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.dance_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.dance_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.duration_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.duration_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.energy_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.energy_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.key_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.key_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.liveness_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.liveness_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.loudness_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.loudness_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.mode_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.mode_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.popularity_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.popularity_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.tempo_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.tempo_lessthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.valence_lessthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.valence_lessthan(fSearch);
                 model.addAttribute("data", data);
             }
         } 
 
 
         else if (operator.equals("<=")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.genres_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.genres_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.count_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.count_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.dance_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.dance_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.duration_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.duration_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.energy_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.energy_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.key_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.key_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.liveness_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.liveness_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.loudness_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.loudness_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.mode_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.mode_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.popularity_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.popularity_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.tempo_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.tempo_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.valence_lessthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.valence_lessthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             }
         }
 
 
         else if (operator.equals(">")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.genres_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.genres_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.count_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.count_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.dance_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.dance_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.duration_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.duration_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.energy_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.energy_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.key_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.key_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.liveness_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.liveness_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.loudness_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.loudness_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.mode_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.mode_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.popularity_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.popularity_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.tempo_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.tempo_greaterthan(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.valence_greaterthan(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.valence_greaterthan(fSearch);
                 model.addAttribute("data", data);
             }
         }
 
         else if (operator.equals(">=")) {
+            Float fSearch;
             try{
-                Float temp = Float.parseFloat(search);
-                char firstChar = search.charAt(0);
-                if ((temp < 1) && (firstChar == '.')) {
-                    search = "0" + search;
-                }
+                fSearch = Float.parseFloat(search);
             }
             catch (NumberFormatException ex) {
                 return "ERROR: Please use integer values for [<, >, <=, >=]";
             }
 
             if (where.equals("genres")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.genres_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.genres_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("acousticness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.acoustic_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("count")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.count_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.count_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("danceability")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.dance_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.dance_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("duration")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.duration_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.duration_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("energy")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.energy_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.energy_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("instrumentalness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.instrumental_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("keyval")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.key_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.key_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("liveness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.liveness_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.liveness_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("loudness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.loudness_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.loudness_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("mode")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.mode_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.mode_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("popularity")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.popularity_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.popularity_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("speechiness")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.speechiness_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("tempo")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.tempo_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.tempo_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             } else if (where.equals("valence")) {
-                var data = (List<Data_by_genres>) Data_by_genresService.valence_greaterthan_or_equal(search);
+                var data = (List<Data_by_genres>) Data_by_genresService.valence_greaterthan_or_equal(fSearch);
                 model.addAttribute("data", data);
             }
         }
@@ -1132,4 +1581,24 @@ public class MyController {
 
         return "queryGenres";
     }
+
+
+
+
+
+
+/*
+    @Autowired
+    private IData_by_tracksService Data_by_tracksService;
+    @GetMapping("/tracks")
+    public String findTracks(Model model) {
+
+        var data = (List<Data_by_tracks>) Data_by_tracksService.findAll();
+
+        model.addAttribute("data", data);
+
+        return "showTracks";
+    }
+
+*/
 }

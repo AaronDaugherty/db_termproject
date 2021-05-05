@@ -438,82 +438,82 @@ public class Data_by_artistService implements IData_by_artistService {
 
 
     @Override
-    public List<Data_by_artist> artists_lessthan(String search) {
+    public List<Data_by_artist> artists_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.artists_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> genres_lessthan(String search) {
+    public List<Data_by_artist> genres_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.genres_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> acoustic_lessthan(String search) {
+    public List<Data_by_artist> acoustic_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.acoustic_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> count_lessthan(String search) {
+    public List<Data_by_artist> count_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.count_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> dance_lessthan(String search) {
+    public List<Data_by_artist> dance_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.dance_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> duration_lessthan(String search) {
+    public List<Data_by_artist> duration_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.duration_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> energy_lessthan(String search) {
+    public List<Data_by_artist> energy_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.energy_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> instrumental_lessthan(String search) {
+    public List<Data_by_artist> instrumental_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.instrumental_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> key_lessthan(String search) {
+    public List<Data_by_artist> key_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.key_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> liveness_lessthan(String search) {
+    public List<Data_by_artist> liveness_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.liveness_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> loudness_lessthan(String search) {
+    public List<Data_by_artist> loudness_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.loudness_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> mode_lessthan(String search) {
+    public List<Data_by_artist> mode_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.mode_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> popularity_lessthan(String search) {
+    public List<Data_by_artist> popularity_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.popularity_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> speechiness_lessthan(String search) {
+    public List<Data_by_artist> speechiness_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.speechiness_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> tempo_lessthan(String search) {
+    public List<Data_by_artist> tempo_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.tempo_lessthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> valence_lessthan(String search) {
+    public List<Data_by_artist> valence_lessthan(Float search) {
         var data = (List<Data_by_artist>) repository.valence_lessthan(search);
         return data;
     }
@@ -521,82 +521,82 @@ public class Data_by_artistService implements IData_by_artistService {
 
 
     @Override
-    public List<Data_by_artist> artists_lessthan_or_equal(String search) {
+    public List<Data_by_artist> artists_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.artists_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> genres_lessthan_or_equal(String search) {
+    public List<Data_by_artist> genres_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.genres_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> acoustic_lessthan_or_equal(String search) {
+    public List<Data_by_artist> acoustic_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.acoustic_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> count_lessthan_or_equal(String search) {
+    public List<Data_by_artist> count_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.count_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> dance_lessthan_or_equal(String search) {
+    public List<Data_by_artist> dance_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.dance_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> duration_lessthan_or_equal(String search) {
+    public List<Data_by_artist> duration_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.duration_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> energy_lessthan_or_equal(String search) {
+    public List<Data_by_artist> energy_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.energy_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> instrumental_lessthan_or_equal(String search) {
+    public List<Data_by_artist> instrumental_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.instrumental_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> key_lessthan_or_equal(String search) {
+    public List<Data_by_artist> key_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.key_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> liveness_lessthan_or_equal(String search) {
+    public List<Data_by_artist> liveness_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.liveness_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> loudness_lessthan_or_equal(String search) {
+    public List<Data_by_artist> loudness_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.loudness_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> mode_lessthan_or_equal(String search) {
+    public List<Data_by_artist> mode_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.mode_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> popularity_lessthan_or_equal(String search) {
+    public List<Data_by_artist> popularity_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.popularity_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> speechiness_lessthan_or_equal(String search) {
+    public List<Data_by_artist> speechiness_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.speechiness_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> tempo_lessthan_or_equal(String search) {
+    public List<Data_by_artist> tempo_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.tempo_lessthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> valence_lessthan_or_equal(String search) {
+    public List<Data_by_artist> valence_lessthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.valence_lessthan_or_equal(search);
         return data;
     }
@@ -605,82 +605,82 @@ public class Data_by_artistService implements IData_by_artistService {
 
 
     @Override
-    public List<Data_by_artist> artists_greaterthan(String search) {
+    public List<Data_by_artist> artists_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.artists_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> genres_greaterthan(String search) {
+    public List<Data_by_artist> genres_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.genres_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> acoustic_greaterthan(String search) {
+    public List<Data_by_artist> acoustic_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.acoustic_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> count_greaterthan(String search) {
+    public List<Data_by_artist> count_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.count_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> dance_greaterthan(String search) {
+    public List<Data_by_artist> dance_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.dance_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> duration_greaterthan(String search) {
+    public List<Data_by_artist> duration_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.duration_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> energy_greaterthan(String search) {
+    public List<Data_by_artist> energy_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.energy_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> instrumental_greaterthan(String search) {
+    public List<Data_by_artist> instrumental_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.instrumental_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> key_greaterthan(String search) {
+    public List<Data_by_artist> key_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.key_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> liveness_greaterthan(String search) {
+    public List<Data_by_artist> liveness_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.liveness_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> loudness_greaterthan(String search) {
+    public List<Data_by_artist> loudness_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.loudness_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> mode_greaterthan(String search) {
+    public List<Data_by_artist> mode_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.mode_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> popularity_greaterthan(String search) {
+    public List<Data_by_artist> popularity_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.popularity_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> speechiness_greaterthan(String search) {
+    public List<Data_by_artist> speechiness_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.speechiness_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> tempo_greaterthan(String search) {
+    public List<Data_by_artist> tempo_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.tempo_greaterthan(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> valence_greaterthan(String search) {
+    public List<Data_by_artist> valence_greaterthan(Float search) {
         var data = (List<Data_by_artist>) repository.valence_greaterthan(search);
         return data;
     }
@@ -688,82 +688,82 @@ public class Data_by_artistService implements IData_by_artistService {
 
 
     @Override
-    public List<Data_by_artist> artists_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> artists_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.artists_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> genres_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> genres_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.genres_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> acoustic_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> acoustic_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.acoustic_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> count_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> count_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.count_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> dance_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> dance_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.dance_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> duration_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> duration_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.duration_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> energy_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> energy_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.energy_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> instrumental_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> instrumental_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.instrumental_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> key_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> key_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.key_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> liveness_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> liveness_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.liveness_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> loudness_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> loudness_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.loudness_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> mode_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> mode_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.mode_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> popularity_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> popularity_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.popularity_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> speechiness_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> speechiness_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.speechiness_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> tempo_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> tempo_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.tempo_greaterthan_or_equal(search);
         return data;
     }
     @Override
-    public List<Data_by_artist> valence_greaterthan_or_equal(String search) {
+    public List<Data_by_artist> valence_greaterthan_or_equal(Float search) {
         var data = (List<Data_by_artist>) repository.valence_greaterthan_or_equal(search);
         return data;
     }

@@ -181,137 +181,137 @@ public interface Data_by_artistRepository extends CrudRepository<Data_by_artist,
 
 
     @Query(value="SELECT * FROM data_by_artist u WHERE u.artists < ?1", nativeQuery=true)
-    List<Data_by_artist> artists_lessthan(String search);
+    List<Data_by_artist> artists_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.genres < ?1", nativeQuery=true)
-    List<Data_by_artist> genres_lessthan(String search);
+    List<Data_by_artist> genres_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.acousticness < ?1", nativeQuery=true)
-    List<Data_by_artist> acoustic_lessthan(String search);
+    List<Data_by_artist> acoustic_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.count < ?1", nativeQuery=true)
-    List<Data_by_artist> count_lessthan(String search);
+    List<Data_by_artist> count_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.danceability < ?1", nativeQuery=true)
-    List<Data_by_artist> dance_lessthan(String search);
+    List<Data_by_artist> dance_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.duration_ms < ?1", nativeQuery=true)
-    List<Data_by_artist> duration_lessthan(String search);
+    List<Data_by_artist> duration_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.energy < ?1", nativeQuery=true)
-    List<Data_by_artist> energy_lessthan(String search);
+    List<Data_by_artist> energy_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.instrumentalness < ?1", nativeQuery=true)
-    List<Data_by_artist> instrumental_lessthan(String search);
+    List<Data_by_artist> instrumental_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.key_val < ?1", nativeQuery=true)
-    List<Data_by_artist> key_lessthan(String search);
+    List<Data_by_artist> key_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.liveness < ?1", nativeQuery=true)
-    List<Data_by_artist> liveness_lessthan(String search);
+    List<Data_by_artist> liveness_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.loudness < ?1", nativeQuery=true)
-    List<Data_by_artist> loudness_lessthan(String search);
+    List<Data_by_artist> loudness_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.mode < ?1", nativeQuery=true)
-    List<Data_by_artist> mode_lessthan(String search);
+    List<Data_by_artist> mode_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.popularity < ?1", nativeQuery=true)
-    List<Data_by_artist> popularity_lessthan(String search);
+    List<Data_by_artist> popularity_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.speechiness < ?1", nativeQuery=true)
-    List<Data_by_artist> speechiness_lessthan(String search);
+    List<Data_by_artist> speechiness_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.tempo < ?1", nativeQuery=true)
-    List<Data_by_artist> tempo_lessthan(String search);
+    List<Data_by_artist> tempo_lessthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.valence < ?1", nativeQuery=true)
-    List<Data_by_artist> valence_lessthan(String search);
+    List<Data_by_artist> valence_lessthan(Float search);
 
 
     @Query(value="SELECT * FROM data_by_artist u WHERE u.artists <= ?1", nativeQuery=true)
-    List<Data_by_artist> artists_lessthan_or_equal(String search);
+    List<Data_by_artist> artists_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.genres <= ?1", nativeQuery=true)
-    List<Data_by_artist> genres_lessthan_or_equal(String search);
+    List<Data_by_artist> genres_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.acousticness <= ?1", nativeQuery=true)
-    List<Data_by_artist> acoustic_lessthan_or_equal(String search);
+    List<Data_by_artist> acoustic_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.count <= ?1", nativeQuery=true)
-    List<Data_by_artist> count_lessthan_or_equal(String search);
+    List<Data_by_artist> count_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.danceability <= ?1", nativeQuery=true)
-    List<Data_by_artist> dance_lessthan_or_equal(String search);
+    List<Data_by_artist> dance_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.duration_ms <= ?1", nativeQuery=true)
-    List<Data_by_artist> duration_lessthan_or_equal(String search);
+    List<Data_by_artist> duration_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.energy <= ?1", nativeQuery=true)
-    List<Data_by_artist> energy_lessthan_or_equal(String search);
+    List<Data_by_artist> energy_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.instrumentalness <= ?1", nativeQuery=true)
-    List<Data_by_artist> instrumental_lessthan_or_equal(String search);
+    List<Data_by_artist> instrumental_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.key_val <= ?1", nativeQuery=true)
-    List<Data_by_artist> key_lessthan_or_equal(String search);
+    List<Data_by_artist> key_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.liveness <= ?1", nativeQuery=true)
-    List<Data_by_artist> liveness_lessthan_or_equal(String search);
+    List<Data_by_artist> liveness_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.loudness <= ?1", nativeQuery=true)
-    List<Data_by_artist> loudness_lessthan_or_equal(String search);
+    List<Data_by_artist> loudness_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.mode <= ?1", nativeQuery=true)
-    List<Data_by_artist> mode_lessthan_or_equal(String search);
+    List<Data_by_artist> mode_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.popularity <= ?1", nativeQuery=true)
-    List<Data_by_artist> popularity_lessthan_or_equal(String search);
+    List<Data_by_artist> popularity_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.speechiness <= ?1", nativeQuery=true)
-    List<Data_by_artist> speechiness_lessthan_or_equal(String search);
+    List<Data_by_artist> speechiness_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.tempo <= ?1", nativeQuery=true)
-    List<Data_by_artist> tempo_lessthan_or_equal(String search);
+    List<Data_by_artist> tempo_lessthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.valence <= ?1", nativeQuery=true)
-    List<Data_by_artist> valence_lessthan_or_equal(String search);
+    List<Data_by_artist> valence_lessthan_or_equal(Float search);
 
 
     @Query(value="SELECT * FROM data_by_artist u WHERE u.artists > ?1", nativeQuery=true)
-    List<Data_by_artist> artists_greaterthan(String search);
+    List<Data_by_artist> artists_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.genres > ?1", nativeQuery=true)
-    List<Data_by_artist> genres_greaterthan(String search);
+    List<Data_by_artist> genres_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.acousticness > ?1", nativeQuery=true)
-    List<Data_by_artist> acoustic_greaterthan(String search);
+    List<Data_by_artist> acoustic_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.count > ?1", nativeQuery=true)
-    List<Data_by_artist> count_greaterthan(String search);
+    List<Data_by_artist> count_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.danceability > ?1", nativeQuery=true)
-    List<Data_by_artist> dance_greaterthan(String search);
+    List<Data_by_artist> dance_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.duration_ms > ?1", nativeQuery=true)
-    List<Data_by_artist> duration_greaterthan(String search);
+    List<Data_by_artist> duration_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.energy > ?1", nativeQuery=true)
-    List<Data_by_artist> energy_greaterthan(String search);
+    List<Data_by_artist> energy_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.instrumentalness > ?1", nativeQuery=true)
-    List<Data_by_artist> instrumental_greaterthan(String search);
+    List<Data_by_artist> instrumental_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.key_val > ?1", nativeQuery=true)
-    List<Data_by_artist> key_greaterthan(String search);
+    List<Data_by_artist> key_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.liveness > ?1", nativeQuery=true)
-    List<Data_by_artist> liveness_greaterthan(String search);
+    List<Data_by_artist> liveness_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.loudness > ?1", nativeQuery=true)
-    List<Data_by_artist> loudness_greaterthan(String search);
+    List<Data_by_artist> loudness_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.mode > ?1", nativeQuery=true)
-    List<Data_by_artist> mode_greaterthan(String search);
+    List<Data_by_artist> mode_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.popularity > ?1", nativeQuery=true)
-    List<Data_by_artist> popularity_greaterthan(String search);
+    List<Data_by_artist> popularity_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.speechiness > ?1", nativeQuery=true)
-    List<Data_by_artist> speechiness_greaterthan(String search);
+    List<Data_by_artist> speechiness_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.tempo > ?1", nativeQuery=true)
-    List<Data_by_artist> tempo_greaterthan(String search);
+    List<Data_by_artist> tempo_greaterthan(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.valence > ?1", nativeQuery=true)
-    List<Data_by_artist> valence_greaterthan(String search);
+    List<Data_by_artist> valence_greaterthan(Float search);
 
 
     @Query(value="SELECT * FROM data_by_artist u WHERE u.artists >= ?1", nativeQuery=true)
-    List<Data_by_artist> artists_greaterthan_or_equal(String search);
+    List<Data_by_artist> artists_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.genres >= ?1", nativeQuery=true)
-    List<Data_by_artist> genres_greaterthan_or_equal(String search);
+    List<Data_by_artist> genres_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.acousticness >= ?1", nativeQuery=true)
-    List<Data_by_artist> acoustic_greaterthan_or_equal(String search);
+    List<Data_by_artist> acoustic_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.count >= ?1", nativeQuery=true)
-    List<Data_by_artist> count_greaterthan_or_equal(String search);
+    List<Data_by_artist> count_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.danceability >= ?1", nativeQuery=true)
-    List<Data_by_artist> dance_greaterthan_or_equal(String search);
+    List<Data_by_artist> dance_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.duration_ms >= ?1", nativeQuery=true)
-    List<Data_by_artist> duration_greaterthan_or_equal(String search);
+    List<Data_by_artist> duration_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.energy >= ?1", nativeQuery=true)
-    List<Data_by_artist> energy_greaterthan_or_equal(String search);
+    List<Data_by_artist> energy_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.instrumentalness >= ?1", nativeQuery=true)
-    List<Data_by_artist> instrumental_greaterthan_or_equal(String search);
+    List<Data_by_artist> instrumental_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.key_val >= ?1", nativeQuery=true)
-    List<Data_by_artist> key_greaterthan_or_equal(String search);
+    List<Data_by_artist> key_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.liveness >= ?1", nativeQuery=true)
-    List<Data_by_artist> liveness_greaterthan_or_equal(String search);
+    List<Data_by_artist> liveness_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.loudness >= ?1", nativeQuery=true)
-    List<Data_by_artist> loudness_greaterthan_or_equal(String search);
+    List<Data_by_artist> loudness_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.mode >= ?1", nativeQuery=true)
-    List<Data_by_artist> mode_greaterthan_or_equal(String search);
+    List<Data_by_artist> mode_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.popularity >= ?1", nativeQuery=true)
-    List<Data_by_artist> popularity_greaterthan_or_equal(String search);
+    List<Data_by_artist> popularity_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.speechiness >= ?1", nativeQuery=true)
-    List<Data_by_artist> speechiness_greaterthan_or_equal(String search);
+    List<Data_by_artist> speechiness_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.tempo >= ?1", nativeQuery=true)
-    List<Data_by_artist> tempo_greaterthan_or_equal(String search);
+    List<Data_by_artist> tempo_greaterthan_or_equal(Float search);
     @Query(value="SELECT * FROM data_by_artist u WHERE u.valence >= ?1", nativeQuery=true)
-    List<Data_by_artist> valence_greaterthan_or_equal(String search);
+    List<Data_by_artist> valence_greaterthan_or_equal(Float search);
 }

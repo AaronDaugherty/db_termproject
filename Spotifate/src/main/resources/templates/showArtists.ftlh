@@ -36,7 +36,7 @@
                             <a class="nav-link" href="/tracks">Tracks</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/year">Year</a>
+                            <a class="nav-link" href="/years">Years</a>
                         </li>
                     </ul>
                 </div>
@@ -243,6 +243,18 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <br/>
+
+    <div class="container">
+        <p class="fs-6 fst-italic text-muted">
+            Artist table contains averaged audio data per each artist derived from the data_o (Original Data) Table.  Many of the columns are self explanatory or based on data taken from spotify's API however Mode and Key require further explanation.
+            <br>
+            Mode - 0 if Minor or 1 if Major 
+            <br> 
+            Key  - 0 to 11 From notes C to B
+        </p>
     </div>
 
     <br/>
