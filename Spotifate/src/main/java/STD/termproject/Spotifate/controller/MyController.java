@@ -5,6 +5,8 @@ import STD.termproject.Spotifate.service.IData_by_artistService;
 import STD.termproject.Spotifate.model.Data_by_genres;
 import STD.termproject.Spotifate.model.Query;
 import STD.termproject.Spotifate.service.IData_by_genresService;
+import STD.termproject.Spotifate.model.Data_by_years;
+import STD.termproject.Spotifate.service.IData_by_yearsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -456,5 +458,20 @@ public class MyController {
         }
 
         return "queryGenres";
+    }
+
+
+	
+    @Autowired
+    private IData_by_yearsService Data_by_yearsService;
+      @GetMapping("/years")
+    public String findYears(Model model) {
+
+        var data = (List<Data_by_years>) Data_by_yearsService.findAll();
+
+        model.addAttribute("data", data);
+
+        return "showYears";
+
     }
 }
