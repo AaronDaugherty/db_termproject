@@ -99,7 +99,7 @@
                 </select>
 
 
-                <select class="form-select-padding-x:5 form-select-color: white" id="operatorSelect" name="operator">
+              
 
                 <select class="form-select w-5" id="operatorSelect" name="operator">
                     <option value="LIKE">LIKE</option>

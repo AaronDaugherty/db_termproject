@@ -30,15 +30,15 @@ import javax.persistence.Table;
 */
 
 @Entity
-@Table(name = "data_by_track")
+@Table(name = "data_o")
 public class Data_by_tracks {
 
     @Id
     private String Id;
+    private String year;
     private String name;
     private int explicit;
     private String artists;
-    private String id_artists;
     private String release_date;
     private String acousticness;
     private String danceability;
@@ -51,19 +51,20 @@ public class Data_by_tracks {
     private String tempo;
     private String valence;
     private String popularity;
-    private int time_signature;
     private int key_val;
     private int mode;
-    private int count;
 
     public Data_by_tracks() {
     }
 
-    public Data_by_tracks(String Id, String tracks, String acousticness, String danceability,
+    public Data_by_tracks(String Id, String release_date, int explicit, String tracks, String acousticness, String danceability,
         String duration_ms, String energy, String instrumentalness, String liveness, String loudness,
-        String speechiness, String tempo, String valence, String popularity, int key_val, int mode, int count) {
+        String speechiness, String tempo, String valence, String popularity, int key_val, int mode) {
 
         this.Id = Id;
+        this.explicit = explicit;
+        this.year = year;
+        this.artists = artists;
         this.name = name;
         this.acousticness = acousticness;
         this.danceability = danceability;
@@ -77,8 +78,8 @@ public class Data_by_tracks {
         this.valence = valence;
         this.popularity = popularity;
         this.key_val = key_val;
-        this.mode = mode;
-        this.count = count; 
+        this.mode = mode; 
+        this.release_date = release_date;
     }
 
     public String getId() {
@@ -87,14 +88,6 @@ public class Data_by_tracks {
     public void setId(String Id) {
         this.Id = Id;
     }
-
-     public int getTime_signature() {
-        return time_signature;
-    }
-    public void setTime_signature(int time_signature) {
-        this.time_signature = time_signature;
-    }
-
 
 
     public int getExplicit() {
@@ -110,14 +103,6 @@ public class Data_by_tracks {
     }
     public void setArtists(String artists) {
         this.artists = artists;
-    }
-
-
-    public String getId_artists() {
-        return id_artists;
-    }
-    public void setId_Artists(String Id_Artists) {
-        this.id_artists = Id_Artists;
     }
 
 
@@ -224,13 +209,6 @@ public class Data_by_tracks {
     }
     public void setMode(int mode) {
         this.mode = mode;
-    }
-
-    public int getCount() {
-        return count;
-    }
-    public void setCount(int count) {
-        this.count = count;
     }
 /*
     @Override
