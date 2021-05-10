@@ -48,22 +48,22 @@
     <br/>
     <br/>
     <div class="container">
-        <h1>Tracks Table | ${data?size} Values</h1>
+        <h1>Original Data Table | ${data?size} Values</h1>
         <br/>
         <p class="fs-6 fst-italic text-muted">Hold ctrl and click to select multiple columns</p>
-        <form action="/years-query" method="post">
+        <form action="/tracks-query" method="post">
             <div class="input-group mb-3" style="max-width:30%">
                 <label class="input-group-text" for="columnSelect">SELECT</label>
                 <select class="form-select w-20" id="columnSelect" name="columns" multiple="mutiple">
-                    <option value="Id">Id</option>
+                    <option value="id" selected="">Id</option>
+                    <option value="year">Year</option>
                     <option value="name">Name</option>
                     <option value="explicit">Explicit</option>
                     <option value="artists">Artists</option>
-                    <option value="idartists">Artist ID</option>
-                    <option value="releasedate">Release Date</option>
+                    <option value="release_date">Release Date</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
-                    <option value="durationms">Duration/ms</option>
+                    <option value="duration_ms">Duration/ms</option>
                     <option value="energy">Energy</option>
                     <option value="instrumentalness">Instrumentalness</option>
                     <option value="liveness">Liveness</option>
@@ -72,10 +72,8 @@
                     <option value="tempo">Tempo</option>
                     <option value="valence">Valence</option>
                     <option value="popularity">Popularity</option>
-                    <option value="timesignature">Time Signature</option>
-                    <option value="keyval">Key</option>
+                    <option value="key_val">Key</option>
                     <option value="mode">Mode</option>
-                    <option value="count">Count</option>
                 </select>
             </div>
 
@@ -84,15 +82,15 @@
                 <input readonly placeholder="Genre Table" class="input-group-text" for="columnSelect" name="from" value="data_by_track"></input>
                 <label class="input-group-text" for="columnSelect">WHERE</label>
                 <select class="form-select w-20" id="columnSelect" name="where">
-                    <option value="Id">Id</option>
+                    <option value="id">Id</option>
+                    <option value="year">Year</option>
                     <option value="name">Name</option>
                     <option value="explicit">Explicit</option>
                     <option value="artists">Artists</option>
-                    <option value="idartists">Artist ID</option>
-                    <option value="releasedate">Release Date</option>
+                    <option value="release_date">Release Date</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
-                    <option value="durationms">Duration/ms</option>
+                    <option value="duration">Duration/ms</option>
                     <option value="energy">Energy</option>
                     <option value="instrumentalness">Instrumentalness</option>
                     <option value="liveness">Liveness</option>
@@ -101,10 +99,8 @@
                     <option value="tempo">Tempo</option>
                     <option value="valence">Valence</option>
                     <option value="popularity">Popularity</option>
-                    <option value="timesignature">Time Signature</option>
-                    <option value="keyval">Key</option>
+                    <option value="key_val">Key</option>
                     <option value="mode">Mode</option>
-                    <option value="count">Count</option>
                 </select>
 
                 <select class="form-select w-5" id="operatorSelect" name="operator">
@@ -130,100 +126,126 @@
             <table class="table table-striped table-hover">
                 <thead style="position: sticky;top: 0" class="table-dark">
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Explicit</th>
-                        <th scope="col">Artists</th>
-                        <th scope="col">Artist ID</th>
-                        <th scope="col">Release Date</th>
-                        <th scope="col">Acousticness</th>
-                        <th scope="col">Danceability</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Energy</th>
-                        <th scope="col">Instrumentalness</th>
-                        <th scope="col">Liveness</th>
-                        <th scope="col">Loudness</th>
-                        <th scope="col">Speechiness</th>
-                        <th scope="col">Tempo</th>
-                        <th scope="col">Valence</th>
-                        <th scope="col">Popularity</th>
-                        <th scope="col">Time Signature</th>
-                        <th scope="col">Key</th>
-                        <th scope="col">Mode</th>
-                        <th scope="col">Count</th>
+                    <td scope="col">Id</td>
+                    <td scope="col">Year</td>
+                    <td scope="col">Name</td>
+                    <td scope="col">Explicit</td>
+                    <td scope="col">Artists</td>
+                    <td scope="col">Release-Date</td>
+                    <td scope="col">Acousticness</td>
+                    <td scope="col">Danceability</td>
+                    <td scope="col">Duration/ms</td>
+                    <td scope="col">Energy</td>
+                    <td scope="col">Instrumentalness</td>
+                    <td scope="col">Liveness</td>
+                    <td scope="col">Loudness</td>
+                    <td scope="col">Speechiness</td>
+                    <td scope="col">Tempo</td>
+                    <td scope="col">Valence</td>
+                    <td scope="col">Popularity</td>
+                    <td scope="col">Key</td>
+                    <td scope="col">Mode</td>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <#list data as data_by_track>
+                    <#list data as data_o>
                         <tr>
-                            <#if data_by_track.id?has_content>
-                                <td>${data_by_track.id}</td>
+                            <#if data_o.id?has_content>
+                                <td>${data_o.id}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.name?has_content>
-                                <td>${data_by_track.name}</td>
+                            <#if data_o.year?has_content>
+                                <td>${data_o.year}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.explicit?has_content>
-                                <td>${data_by_track.explicit}</td>
+                            <#if data_o.name?has_content>
+                                <td>${data_o.name}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.artists?has_content>
-                                <td>${data_by_track.artists}</td>
+                            <#if data_o.explicit?has_content>
+                                <td>${data_o.explicit}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.id_artists?has_content>
-                                <td>${data_by_track.id_artists}</td>
+                            <#if data_o.artists?has_content>
+                                <td>${data_o.artists}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.release_date?has_content>
-                                <td>${data_by_track.release_date}</td>
+                            <#if data_o.release_date?has_content>
+                                <td>${data_o.release_date}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.acousticness?has_content>
-                                <td>${data_by_track.acousticness}</td>
+                            <#if data_o.acousticness?has_content>
+                                <td>${data_o.acousticness}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.danceability?has_content>
-                                <td>${data_by_track.danceability}</td>
+                            <#if data_o.danceability?has_content>
+                                <td>${data_o.danceability}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.duration_ms?has_content>
-                                <td>${data_by_track.duration_ms}</td>
+                            <#if data_o.duration?has_content>
+                                <td>${data_o.duration}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.energy?has_content>
-                                <td>${data_by_track.energy}</td>
+                            <#if data_o.energy?has_content>
+                                <td>${data_o.energy}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-                            <#if data_by_track.instrumentalness?has_content>
-                                <td>${data_by_track.instrumentalness}</td>
+                            <#if data_o.instrumentalness?has_content>
+                                <td>${data_o.instrumentalness}</td>
                             <#else>
                                 <td>NULL</td>
                             </#if>
-
-
+                            <#if data_o.liveness?has_content>
+                                <td>${data_o.liveness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.loudness?has_content>
+                                <td>${data_o.loudness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.speechiness?has_content>
+                                <td>${data_o.speechiness}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.tempo?has_content>
+                                <td>${data_o.tempo}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.valence?has_content>
+                                <td>${data_o.valence}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.popularity?has_content>
+                                <td>${data_o.popularity}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.keyval?has_content>
+                                <td>${data_o.keyval}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
+                            <#if data_o.mode?has_content>
+                                <td>${data_o.mode}</td>
+                            <#else>
+                                <td>NULL</td>
+                            </#if>
                         </tr>
                     </#list>
                 </tbody>

@@ -7,27 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/*
-+------------------+--------------+------+-----+---------+-------+
-| Field            | Type         | Null | Key | Default | Extra |
-+------------------+--------------+------+-----+---------+-------+
-| tracks          | varchar(255) | NO   | PRI | NULL    |       |
-| acousticness     | varchar(255) | YES  |     | NULL    |       |
-| count            | int          | NO   |     | NULL    |       |
-| danceability     | varchar(255) | YES  |     | NULL    |       |
-| duration_ms      | varchar(255) | YES  |     | NULL    |       |
-| energy           | varchar(255) | YES  |     | NULL    |       |
-| instrumentalness | varchar(255) | YES  |     | NULL    |       |
-| key_val          | int          | NO   |     | NULL    |       |
-| liveness         | varchar(255) | YES  |     | NULL    |       |
-| loudness         | varchar(255) | YES  |     | NULL    |       |
-| mode             | int          | NO   |     | NULL    |       |
-| popularity       | varchar(255) | YES  |     | NULL    |       |
-| speechiness      | varchar(255) | YES  |     | NULL    |       |
-| tempo            | varchar(255) | YES  |     | NULL    |       |
-| valence          | varchar(255) | YES  |     | NULL    |       |
-+------------------+--------------+------+-----+---------+-------+
-*/
 
 @Entity
 @Table(name = "data_o")
@@ -95,6 +74,14 @@ public class Data_by_tracks {
     }
     public void setExplicit(int explicit) {
         this.explicit = explicit;
+    }
+
+
+    public String getYear() {
+        return year;
+    }
+    public void setYear(String year) {
+        this.year = year;
     }
 
 

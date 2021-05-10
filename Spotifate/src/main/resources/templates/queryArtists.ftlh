@@ -58,7 +58,7 @@
             <div class="input-group mb-3" style="max-width:30%">
                 <label class="input-group-text" for="columnSelect">SELECT</label>
                 <select class="form-select w-20" id="columnSelect" name="columns" multiple="mutiple">
-                    <option value="artists">Artists</option>
+                    <option value="artists" selected="">Artists</option>
                     <option value="genres">Genres</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
