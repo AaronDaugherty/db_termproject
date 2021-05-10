@@ -166,3 +166,7 @@ body {
   animation-delay: 10s;
   animation-duration: 9s;
 }
+
+p.s1 {
+  margin: 35px;
+}
