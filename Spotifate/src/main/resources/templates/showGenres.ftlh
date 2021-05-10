@@ -56,7 +56,7 @@
             <div class="input-group mb-3" style="max-width:30%">
                 <label class="input-group-text" for="columnSelect">SELECT</label>
                 <select class="form-select w-20" id="columnSelect" name="columns" multiple="mutiple">
-                    <option value="genres">Genres</option>
+                    <option value="genres" selected="">Genres</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
                     <option value="duration_ms">Duration/ms</option>
@@ -97,9 +97,6 @@
                     <option value="keyval">Key</option>
                     <option value="mode">Mode</option>
                 </select>
-
-
-              
 
                 <select class="form-select w-5" id="operatorSelect" name="operator">
                     <option value="LIKE">LIKE</option>
@@ -235,6 +232,16 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <br/>
+
+    <div class="container">
+        <p class="fs-6 fst-italic text-muted">
+            Mode - 0 if Minor or 1 if Major 
+            <br> 
+            Key  - 0 to 11 From notes C to B
+        </p>
     </div>
 
     <br/>

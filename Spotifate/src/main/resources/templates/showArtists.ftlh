@@ -56,7 +56,7 @@
             <div class="input-group mb-3" style="max-width:30%">
                 <label class="input-group-text" for="columnSelect">SELECT</label>
                 <select class="form-select w-20" id="columnSelect" name="columns" multiple="mutiple">
-                    <option value="artists">Artists</option>
+                    <option value="artists" selected="">Artists</option>
                     <option value="genres">Genres</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
@@ -249,8 +249,6 @@
 
     <div class="container">
         <p class="fs-6 fst-italic text-muted">
-            Artist table contains averaged audio data per each artist derived from the data_o (Original Data) Table.  Many of the columns are self explanatory or based on data taken from spotify's API however Mode and Key require further explanation.
-            <br>
             Mode - 0 if Minor or 1 if Major 
             <br> 
             Key  - 0 to 11 From notes C to B

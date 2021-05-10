@@ -78,7 +78,7 @@
                 <input readonly placeholder="Genre Table" class="input-group-text" for="columnSelect" name="from" value="data_by_year"></input>
                 <label class="input-group-text" for="columnSelect">WHERE</label>
                 <select class="form-select w-20" id="columnSelect" name="where">
-                    <option value="years">Year</option>
+                    <option value="years" selected="">Year</option>
                     <option value="acousticness">Acousticness</option>
                     <option value="danceability">Danceability</option>
                     <option value="duration">Duration/ms</option>
@@ -227,6 +227,16 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <br/>
+
+    <div class="container">
+        <p class="fs-6 fst-italic text-muted">
+            Mode - 0 if Minor or 1 if Major 
+            <br> 
+            Key  - 0 to 11 From notes C to B
+        </p>
     </div>
 
     <br/>
