@@ -1,0 +1,13 @@
+Spotifate
+By Sniper Team Delta (Chloe Phelps, Aaron Daugherty, Garrett Corder)
+
+
+
+How to compile and run Spotifate:
+
+
+1. Change into the db_termproject directory within your computer's file system.
+
+2. Copy and paste 'http://localhost:8080/' into a web browser.
+
+3. Type 'python3 script.py' into the terminal and hit enter.
