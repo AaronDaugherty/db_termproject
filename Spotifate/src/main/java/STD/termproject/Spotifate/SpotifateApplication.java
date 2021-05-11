@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+*@author Aaron
+*@param Description SpotifateApplication is the main driver class for the Spotoifate application
+*
+*/
+
 @SpringBootApplication
 //@RestController
 public class SpotifateApplication {

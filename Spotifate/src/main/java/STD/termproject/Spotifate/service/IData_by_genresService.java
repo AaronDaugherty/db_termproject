@@ -5,6 +5,12 @@ import java.util.List;
 
 public interface IData_by_genresService {
 
+    /**
+*@author Garrett
+*@param Description IData_by_genresService defines all of the lists for genres queries
+*
+*/
+
     List<Data_by_genres> findAll();
 
     List<Data_by_genres> genres_like(String search);

@@ -29,6 +29,13 @@ import javax.persistence.Table;
 +------------------+--------------+------+-----+---------+-------+
 */
 
+/**
+*@author Aaron
+*@param Description Data_by_years defines the table in the database where
+*data that is measured relative to different years is stored.
+*
+*
+*/
 @Entity
 @Table(name = "data_by_year")
 public class Data_by_years {

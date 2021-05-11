@@ -29,6 +29,13 @@ import javax.persistence.Table;
 +------------------+--------------+------+-----+---------+-------+
 */
 
+/**
+*@author Aaron
+*@param Description Data_by_genres defines the table in the database where
+*data that is measured relative to different genres is stored.
+*
+*
+*/
 @Entity
 @Table(name = "data_by_genre")
 public class Data_by_genres {

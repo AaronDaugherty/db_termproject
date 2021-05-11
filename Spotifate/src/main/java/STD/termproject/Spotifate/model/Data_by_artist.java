@@ -30,6 +30,14 @@ import javax.persistence.Table;
 +------------------+--------------+------+-----+---------+-------+
 */
 
+/**
+*@author Aaron
+*@param Description Data_by_artist defines the table in the database where
+*data that is measured relative to different artists is stored.
+*
+*
+*/
+
 @Entity
 @Table(name = "data_by_artist")
 public class Data_by_artist {

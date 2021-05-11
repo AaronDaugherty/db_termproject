@@ -5,6 +5,12 @@ import java.util.List;
 
 public interface IData_by_tracksService {
 
+    /**
+*@author Garrett
+*@param Description IData_by_tracksService defines all of the lists for tracks queries
+*
+*/
+
     List<Data_by_tracks> findAll();
 
     List<Data_by_tracks> id_like(String search);

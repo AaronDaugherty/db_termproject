@@ -8,6 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+/**
+*@author Aaron
+*@param Description Data_by_tracks defines the table in the database where
+*data that is measured relative to different tracks is stored.
+*
+*
+*/
 @Entity
 @Table(name = "data_o")
 public class Data_by_tracks {

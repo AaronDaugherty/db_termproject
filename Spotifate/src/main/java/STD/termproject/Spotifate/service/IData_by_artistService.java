@@ -3,6 +3,12 @@ package STD.termproject.Spotifate.service;
 import STD.termproject.Spotifate.model.Data_by_artist;
 import java.util.List;
 
+
+/**
+*@author Garrett
+*@param Description IData_by_artistService defines all of the lists for artist queries
+*
+*/
 public interface IData_by_artistService {
 
     List<Data_by_artist> findAll();

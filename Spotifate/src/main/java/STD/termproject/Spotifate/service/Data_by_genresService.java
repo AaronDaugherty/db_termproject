@@ -6,6 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+/**
+*@author Garrett
+*@param Description Data_by_genresService defines all of the possible genres queries
+*
+*/
 @Service
 public class Data_by_genresService implements IData_by_genresService {
 

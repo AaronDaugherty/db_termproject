@@ -6,6 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+/**
+*@author Garrett
+*@param Description Data_by_artistService defines all of the possible artist queries
+*
+*/
 @Service
 public class Data_by_artistService implements IData_by_artistService {
 
